@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Consumption Calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+     <header>
+            <nav>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#black"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li> <a href="#">Home</a></li>
+            <li> <a href="how.html">How it Works</a></li>
+            <li> <a href="#">About</a></li>
+            <li> <a href="contact.html">Contact Us</a></li>
+            <li> <a href="FAQ.html">FAQs</a></li>
+        </ul>
+        <ul>
+            <li> <img src="PowCal.png" alt="Not Found"></li>
+            <li class="hideOnMobile"> <a href="#">Home</a></li>
+            <li class="hideOnMobile"> <a href="how.html">How it Works</a></li>
+            <li class="hideOnMobile"> <a href="#">About</a></li>
+            <li class="hideOnMobile"> <a href="contact.html">Contact Us</a></li>
+            <li class="hideOnMobile"> <a href="FAQ.html">FAQs</a></li>
+            <li class="menu-button" onclick=showSidebar() > <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#black"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"></svg></a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <button id="calc-toggle" onclick="toggleCalculator()">
+    ⚡ Calculator </button>
+
+<div id="calculatorBox">
+    <!-- Your calculator content goes here -->
+     <div id="calc">
+    <h3>Power Calculator</h3>
+    </div>
+    <div class="total-box">
+        Total Energy: <strong><span id="totalWh">0</span> Wh</strong>
+        <div class="small">This updates as you add appliances.</div>
+      </div>
+
+      <div class="custom-row">
+        <input type="number" id="customWatts" placeholder="Enter Unavailable appliance (W)" min="1" />
+        <button class="Enter" onclick="addCustomAppliance()">Enter</button>
+      </div>
+
+      <div class="history" id="history"></div>
+
+      <button id="clear-btn" onclick="clearAll()">Clear All</button>
+
+    </div>
+  </div>
+</div>
+
+
+    <section id="uno">
+        <h1 class="cal1">Power Consumption Calculator</h1>
+        <p> Welcome to PowCal, your simple and reliable power consumption calculator. This platform is designed to help you estimate and understand the electricity usage of different household, office, and industrial appliances. Whether you want to check the power rating of a single device or calculate your total daily energy consumption, PowCal makes it easy. Simply select your appliances, enter their usage details, and instantly view their power consumption in Watts (W) or Kilowatts (kW). Our goal is to help you make informed decisions about energy use, improve efficiency, and better manage your electricity costs.
+</p>
+    </section>
+    
+
+
+
+<div class="search-container">
+    <label for="searchInput">Search:</label>
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Enter appliance..."
+        onkeyup="searchAppliances()"
+    >
+</div>
+
+
+
+
+
+    <section>
+
+        <div id="main">
+        <div class="first">
+            <img src="bulbl.jpg" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Led Bulb </p>
+            <button class="button1" onclick="addAppliance('Led Bulb', 10)">10 W</button>
+        </div>
+        <div class="first">
+            <img src="fan.png" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Ceiling Fan </p>
+            <button class="button1" onclick="addAppliance('Ceiling Fan', 75)">75 W</button>
+        </div>
+        <div class="first">
+            <img src="tv.png" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Television (LED) </p>
+            <button class="button1" onclick="addAppliance('Television', 100)">100 W</button>
+        </div>
+        <div class="first">
+            <img src="charger.png" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Phone Charger </p>
+            <button class="button1" onclick="addAppliance('Phone Charger', 10)">10 W</button>
+        </div>
+        
+        
+        <div class="first">
+            <img src="fridge.png" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Refrigerator</p>
+            <button class="button1" onclick="addAppliance('Refrigerator', 75)">75 W</button>
+        </div>
+        <div class="first">
+            <img src="freezer.png" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Deep Freezer </p>
+            <button class="button1" onclick="addAppliance('Deep Freezer', 250)">250 W</button>
+        </div>
+        <div class="first">
+            <img src="laptop.png" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong> Laptop </p>
+            <button class="button1" onclick="addAppliance('Laptop', 65)">65 W</button>
+        </div>
+        <div class="first">
+            <img src="desktopp.png" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Full Desktop </p>
+            <button class="button1" onclick="addAppliance('Full Desktop', 250)">250 W</button>
+        </div>
+        
+
+        <div class="first">
+            <img src="iron.png" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>An Iron </p>
+            <button class="button1" onclick="addAppliance('Iron', 1200)">1.2 KW</button>
+        </div>
+        <div class="first">
+            <img src="sfan.jpeg" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Standing Fan </p>
+            <button class="button1" onclick="addAppliance('Standing Fan', 60)">60 W</button>
+        </div>
+        <div class="first">
+            <img src="oven.png" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Microwave Oven</p>
+            <button class="button1" onclick="addAppliance('Microwave Oven', 1200)">1.2 KW</button>
+        </div>
+        <div class="first">
+            <img src="kettle.png" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>An Electric Kettle</p>
+            <button class="button1" onclick="addAppliance('Electric Kettle', 2000)">2 kW</button>
+        </div>
+        
+
+
+
+        <div class="first">
+            <img src="blender.png" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Blender </p>
+            <button class="button1" onclick="addAppliance('Blender', 500)">500 W</button>
+        </div>
+        <div class="first">
+            <img src="washingMachine.png" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Washing Machine </p>
+            <button class="button1" onclick="addAppliance('Washing Machine', 500)">500 W</button>
+        </div>
+        <div class="first">
+            <img src="ACF.jpg" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>Air Conditioner (1 HP) </p>
+            <button class="button1" onclick="addAppliance('Air Conditioner (1 HP)', 900)">900 W</button>
+        </div>
+        <div class="first">
+            <img src="VCleaner.jpg" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Vacuum Cleaner </p>
+            <button class="button1" onclick="addAppliance('Vacuum Cleaner', 1200)">1.2 KW</button>
+        </div>
+        
+        
+        <div class="first">
+            <img src="Wpump.jpeg" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Water Pump</p>
+            <button class="button1" onclick="addAppliance('Water Pump', 750)">750 W</button>
+        </div>
+        <div class="first">
+            <img src="Toaster.jpg" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Toaster </p>
+            <button class="button1" onclick="addAppliance('Toaster', 800)">800 W</button>
+        </div>
+        <div class="first">
+            <img src="hairdryer.jpg" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>An Hair Dryer </p>
+            <button class="button1" onclick="addAppliance('Hair Dryer', 1500)">1.5 KW</button>
+        </div>
+        <div class="first">
+            <img src="DStv.jpg" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A DSTV Decoder </p>
+            <button class="button1" onclick="addAppliance('DSTV Decoder', 18)">18 W</button>
+        </div>
+        
+
+        <div class="first">
+            <img src="rice.jpg" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Rice Cooker </p>
+            <button class="button1" onclick="addAppliance('Rice Cooker', 700)">700 W</button>
+        </div>
+        <div class="first">
+            <img src="hst.jpg" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>An Hair Straightener </p>
+            <button class="button1" onclick="addAppliance('Hair Straightener', 100)">100 W</button>
+        </div>
+        <div class="first">
+            <img src="printer66.jpg" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Printer (Laser)</p>
+            <button class="button1" onclick="addAppliance('Printer (Laser)', 600)">600 W</button>
+        </div>
+        <div class="first">
+            <img src="mixer.jpg" alt="Not found"> <br>
+            <p class="appli"><strong>NAME: </strong>A Mixer</p>
+            <button class="button1" onclick="addAppliance('Mixer', 300)">300 W</button>
+        </div>
+        
+        </div>
+    </section>
+
+    <script>
+
+    let totalWh = 0;
+    const history = [];
+        function showSidebar(){
+            const sidebar= document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar= document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+
+        function toggleCalculator() {
+    let box = document.getElementById("calculatorBox");
+
+    if (box.style.display === "none" || box.style.display === "") {
+        box.style.display = "block";
+    } else {
+        box.style.display = "none";
+    }
+}
+
+// function addAppliance(name, watts) {
+//     const hours = prompt(`How many hours do you use ${name}?`);
+
+//     if (hours === null) return;
+
+//     const h = parseFloat(hours);
+
+//     if (isNaN(h) || h <= 0) {
+//         alert("Please enter a valid number of hours.");
+//         return;
+//     }
+
+//     const wh = watts * h;
+//     totalWh += wh;
+
+//     document.getElementById("totalWh").innerText =
+//         totalWh.toFixed(2);
+// }
+
+// function updateDisplay() {
+//       document.getElementById("totalWh").textContent = totalWh.toFixed(2);
+
+//       const historyBox = document.getElementById("history");
+//       historyBox.innerHTML = "";
+
+//       history.forEach((item, index) => {
+//         const div = document.createElement("div");
+//         div.className = "history-item";
+//         div.innerHTML = `
+//           <strong>${index + 1}. ${item.name}</strong><br>
+//           ${item.watts} W × ${item.hours} h = ${item.wh.toFixed(2)} Wh
+//         `;
+//         historyBox.appendChild(div);
+//       });
+//     }
+function addAppliance(name, watts) {
+
+    const hours = prompt(`How many HOURS do you use your ${name}?`);
+    if (hours === null) return;
+
+    const h = parseFloat(hours);
+
+    if (isNaN(h) || h <= 0) {
+        alert("Please enter a valid number of hours.");
+        return;
+    }
+
+    const amount = prompt(`How many ${name}(s) do you have?`);
+    if (amount === null) return;
+
+    const qty = parseInt(amount);
+
+    if (isNaN(qty) || qty <= 0) {
+        alert("Please enter a valid quantity.");
+        return;
+    }
+
+    const wh = watts * h * qty;
+    totalWh += wh;
+
+    history.push({
+        name,
+        watts,
+        hours: h,
+        amount: qty,
+        wh
+    });
+
+    updateDisplay();
+}
+
+    function addCustomAppliance() {
+
+    const wattsInput = document.getElementById("customWatts");
+    const watts = parseFloat(wattsInput.value);
+
+    if (isNaN(watts) || watts <= 0) {
+        alert("Please enter a valid watt value.");
+        return;
+    }
+
+    const name = prompt("Enter appliance name:");
+    if (name === null || name.trim() === "") return;
+
+    const hours = prompt(`How many hours do you use ${name.trim()}?`);
+    if (hours === null) return;
+
+    const h = parseFloat(hours);
+
+    if (isNaN(h) || h <= 0) {
+        alert("Please enter a valid number of hours.");
+        return;
+    }
+
+    const amount = prompt(`How many ${name.trim()}(s) do you have?`);
+    if (amount === null) return;
+
+    const qty = parseInt(amount);
+
+    if (isNaN(qty) || qty <= 0) {
+        alert("Please enter a valid quantity.");
+        return;
+    }
+
+    const wh = watts * h * qty;
+    totalWh += wh;
+
+    history.push({
+        name: name.trim(),
+        watts,
+        hours: h,
+        amount: qty,
+        wh
+    });
+
+    wattsInput.value = "";
+    updateDisplay();
+}
+
+    function updateDisplay() {
+      document.getElementById("totalWh").textContent = totalWh.toFixed(2);
+
+      const historyBox = document.getElementById("history");
+      historyBox.innerHTML = "";
+
+      history.forEach((item, index) => {
+        const div = document.createElement("div");
+        div.className = "history-item";
+        div.innerHTML = `
+  <strong>${index + 1}. ${item.name}</strong><br>
+  ${item.watts} W × ${item.hours} h × ${item.amount} unit(s)
+  = ${item.wh.toFixed(2)} Wh`;
+        historyBox.appendChild(div);
+      });
+    }
+    function clearAll() {
+        totalWh = 0;
+        history.length = 0;
+        updateDisplay();
+    }
+
+
+
+
+    function searchAppliances() {
+    let input = document.getElementById("searchInput");
+    let filter = input.value.toLowerCase();
+
+    let appliances = document.querySelectorAll("#main .first");
+
+    appliances.forEach(appliance => {
+        let text = appliance.textContent.toLowerCase();
+
+        if (text.includes(filter)) {
+            appliance.style.display = "";
+        } else {
+            appliance.style.display = "none";
+        }
+    });
+}
+    </script>
+    
+
+
+    <footer>
+    <p class="footer-note">
+        PowCal ⚡ Making electricity consumption simple and easy to understand.
+    </p><br><br><br>
+    </footer>
+
+
+
+     <!-- <footer>
+        <hr>
+        author: Yahaya Muhammed-Kamaldeen <br>
+        &copy; 2026 copyright reserved <br>
+         <a href="">kamaldeeny1@gmail.com</a></small>
+     </footer> -->
+     
+</body>
+</html>

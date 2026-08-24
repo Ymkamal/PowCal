@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Contact - PowCal</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background:#f8f9fa;
+            color:#333;
+        }
+
+        .container{
+            max-width:1000px;
+            margin:50px auto;
+            padding:20px;
+        }
+
+        .title{
+            text-align:center;
+            color:#ff6a00;
+            font-size:3rem;
+            margin-bottom:10px;
+        }
+
+        .subtitle{
+            text-align:center;
+            color:#666;
+            margin-bottom:40px;
+        }
+
+        .contact-card{
+            background:white;
+            border-radius:20px;
+            padding:30px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.1);
+            display:flex;
+            flex-wrap:wrap;
+            gap:30px;
+            align-items:center;
+        }
+
+        .photo-section{
+            flex:1;
+            min-width:250px;
+            text-align:center;
+        }
+
+        .photo-placeholder{
+            width:220px;
+            height:220px;
+            margin:auto;
+            border:4px dashed #ff8c00;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:#999;
+            font-weight:bold;
+            background:#fff7f0;
+        }
+
+        .info-section{
+            flex:2;
+            min-width:300px;
+        }
+
+        .info-section h2{
+            color:#ff6a00;
+            margin-bottom:20px;
+        }
+
+        .detail{
+            margin-bottom:15px;
+            padding:12px;
+            background:#fff7f0;
+            border-left:4px solid #ff8c00;
+            border-radius:8px;
+        }
+
+        .detail strong{
+            color:#ff6a00;
+        }
+
+        .note{
+            margin-top:30px;
+            background:white;
+            padding:20px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .note h3{
+            color:#ff6a00;
+            margin-bottom:10px;
+        }
+
+        footer{
+            text-align:center;
+            margin-top:40px;
+            color:#777;
+            font-style:italic;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#black"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li> <a href="index.html">Home</a></li>
+            <li> <a href="how.html">How it Works</a></li>
+            <li> <a href="#">About</a></li>
+            <li> <a href="#">Contact Us</a></li>
+            <li> <a href="FAQ.html">FAQs</a></li>
+        </ul>
+        <ul>
+            <li> <img src="PowCal.png" alt="Not Found"></li>
+            <li class="hideOnMobile"> <a href="index.html">Home</a></li>
+            <li class="hideOnMobile"> <a href="how.html">How it Works</a></li>
+            <li class="hideOnMobile"> <a href="#">About</a></li>
+            <li class="hideOnMobile"> <a href="#">Contact Us</a></li>
+            <li class="hideOnMobile"> <a href="FAQ.html">FAQs</a></li>
+            <li class="menu-button" onclick=showSidebar() > <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#black"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"></svg></a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <div class="container">
+
+        <h1 class="title">Contact Me 📧</h1>
+
+        <p class="subtitle">
+            Have questions, suggestions, or feedback about PowCal? Feel free to get in touch.
+        </p>
+
+        <div class="contact-card">
+
+            <!-- PHOTO SECTION -->
+            <div class="photo-section">
+
+                <!-- Replace this with your image later -->
+                <div class="photo-placeholder">
+                    YOUR PHOTO HERE
+                </div>
+
+            </div>
+
+            <!-- CONTACT DETAILS -->
+            <div class="info-section">
+
+                <h2>Contact Information</h2>
+
+                <div class="detail">
+                    <strong>Name:</strong> Yahaya Muhammed-Kamaldeen Oluwadamilola
+                </div>
+
+                <div class="detail">
+                    <strong>Email:</strong> kamaldeeny1@gmail.com
+                </div>
+
+                <div class="detail">
+                    <strong>Phone:</strong> 09133963974
+                </div>
+
+                <div class="detail">
+                    <strong>Location:</strong> [Enter Your Location]
+                </div>
+
+                <div class="detail">
+                    <strong>Website:</strong> [Enter Website Link]
+                </div>
+
+                <div class="detail">
+                    <strong>Social Media:</strong> [Enter Social Media Links]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="note">
+            <h3>About the Creator</h3>
+
+            <p>
+                [Write a short paragraph about yourself here. For example,
+                why you created PowCal, your interest in electricity and
+                energy management, and what you hope users gain from using
+                the website.]
+            </p>
+        </div>
+
+        <footer>
+            PowCal ⚡ Making power consumption easy to understand.
+        </footer>
+
+    </div>
+
+</body>
+</html>

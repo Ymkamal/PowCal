@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>FAQs - PowCal</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background:#f8f9fa;
+            color:#333;
+            line-height:1.7;
+        }
+
+        .container{
+            max-width:900px;
+            margin:auto;
+            padding:40px 20px;
+        }
+
+        .title{
+            text-align:center;
+            color:#ff6a00;
+            font-size:3rem;
+            margin-bottom:10px;
+        }
+
+        .subtitle{
+            text-align:center;
+            color:#666;
+            margin-bottom:40px;
+        }
+
+        .faq-item{
+            background:white;
+            margin-bottom:20px;
+            padding:20px;
+            border-radius:12px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.08);
+            border-left:5px solid #ff8c00;
+        }
+
+        .faq-item h3{
+            color:#ff6a00;
+            margin-bottom:10px;
+        }
+
+        .footer{
+            text-align:center;
+            margin-top:40px;
+            color:#777;
+            font-style:italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#black"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li> <a href="index.html">Home</a></li>
+            <li> <a href="how.html">How it Works</a></li>
+            <li> <a href="#">About</a></li>
+            <li> <a href="contact.html">Contact Us</a></li>
+            <li> <a href="#">FAQs</a></li>
+        </ul>
+        <ul>
+            <li> <img src="PowCal.png" alt="Not Found"></li>
+            <li class="hideOnMobile"> <a href="index.html">Home</a></li>
+            <li class="hideOnMobile"> <a href="how.html">How it Works</a></li>
+            <li class="hideOnMobile"> <a href="#">About</a></li>
+            <li class="hideOnMobile"> <a href="contact.html">Contact Us</a></li>
+            <li class="hideOnMobile"> <a href="#">FAQs</a></li>
+            <li class="menu-button" onclick=showSidebar() > <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#black"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"></svg></a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <div class="container">
+
+        <h1 class="title">Frequently Asked Questions ❓</h1>
+
+        <p class="subtitle">
+            Find answers to common questions about electricity, power consumption, and how PowCal works.
+        </p>
+
+        <div class="faq-item">
+            <h3>What is PowCal?</h3>
+            <p>
+                PowCal is an online tool that helps users estimate the power consumption of household and office appliances using their average power ratings and usage hours.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is a Watt (W)?</h3>
+            <p>
+                A watt is a unit of power. It measures how much electrical power an appliance uses at a given moment.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is a Kilowatt (kW)?</h3>
+            <p>
+                One kilowatt equals 1,000 watts. Larger appliances and electricity bills are often measured in kilowatts.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is a Kilowatt-hour (kWh)?</h3>
+            <p>
+                A kilowatt-hour is a unit of energy. It represents the amount of electricity used when a 1-kilowatt appliance runs for one hour.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does PowCal calculate energy consumption?</h3>
+            <p>
+                PowCal uses the appliance's average power rating and the number of hours it is used.
+            </p>
+
+            <p>
+                <strong>Formula:</strong><br>
+                Energy Consumption (Wh) = Power (W) × Hours Used
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Are the calculations 100% accurate?</h3>
+            <p>
+                PowCal provides estimates based on average power ratings. Actual consumption may vary depending on appliance model, condition, and usage patterns.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why do some appliances consume more power than others?</h3>
+            <p>
+                Appliances that generate heat, cooling, or mechanical movement—such as air conditioners, electric irons, and water heaters—typically consume more electricity than devices like LED bulbs or phone chargers.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can PowCal help reduce my electricity bill?</h3>
+            <p>
+                Yes. By understanding which appliances consume the most electricity, you can make informed decisions to reduce energy usage and potentially lower your electricity costs.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why are appliance power ratings different?</h3>
+            <p>
+                Different brands and models are designed differently. As a result, power consumption can vary even among appliances that perform the same function.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Who can use PowCal?</h3>
+            <p>
+                Anyone can use PowCal—homeowners, students, tenants, businesses, and anyone interested in understanding electricity consumption.
+            </p>
+        </div>
+
+        <div class="footer">
+            PowCal ⚡ Making power consumption easy to understand.
+        </div>
+
+    </div>
+
+</body>
+</html>
